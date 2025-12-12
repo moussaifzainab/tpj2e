@@ -1,6 +1,6 @@
 # TPs JEE – Microservices & Messaging
 
-**Étudiant(e)** : ZAINAB MOUSSAIF  
+**Étudiant(e)** : ZAINAB MOUSSAIF & SAAD QOUHAFA 
 **Module** : JEE   
 **Classe** : 5IIR_11
 
