@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Web Application</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                 <link rel="stylesheet" href="/css/theme.css">
+        
+  <style> body{padding-top:50px} .special{padding-top:50px} </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container"><div class="navbar-header">
+    <a class="navbar-brand" href=".">Système de gestion des employés</a>
+  </div></div>
+</nav>
+
+<div class="container special" th:object="${employee}">
+  <!-- message flash optionnel -->
+  <div th:if="${msg}" class="alert alert-success" th:text="${msg}"></div>
+  <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
+
+  <h2 th:text="*{id} != null ? 'Modification d\'un employé' : 'Création d\'un employé'">Formulaire</h2>
+
+  <form method="post" th:action="@{/saveEmployee}">
+    <input type="hidden" th:field="*{id}"/>
+
+    <div class="form-group">
+      <label for="firstName">Prénom</label>
+      <input id="firstName" name="firstName" type="text" th:field="*{firstName}"
+             class="form-control" placeholder="Saisir le prénom" required minlength="2">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Nom</label>
+      <input id="lastName" name="lastName" type="text" th:field="*{lastName}"
+             class="form-control" placeholder="Saisir le nom" required minlength="2">
+    </div>
+
+    <div class="form-group">
+      <label for="mail">Email</label>
+      <input id="mail" name="mail" type="email" th:field="*{mail}"
+             class="form-control" placeholder="Saisir l'adresse email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input id="password" name="password" type="text" th:field="*{password}"
+             class="form-control" placeholder="Saisir le mot de passe" required minlength="3">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+    <a th:href="@{/}" class="btn btn-default">Annuler</a>
+  </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+/* ---- Base ---- */
+html, body { background:#f7f8fb; color:#243144; }
+body { padding-top:70px; font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+.container.special { padding-top:10px; }
+
+/* ---- Navbar ---- */
+.navbar-inverse.navbar-fixed-top {
+  background: linear-gradient(90deg, #1c2b5a, #273e8a);
+  border: 0;
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+}
+.navbar-inverse .navbar-brand { color:#fff !important; font-weight:600; letter-spacing:.2px; }
+.navbar-inverse .navbar-brand:hover { color:#e8eefc !important; }
+
+/* ---- Titres ---- */
+h2 {
+  position: relative;
+  font-weight: 700;
+  margin: 8px 0 18px;
+}
+h2:after {
+  content:"";
+  display:block;
+  width:56px; height:4px;
+  margin-top:8px;
+  background: linear-gradient(90deg, #3b82f6, #22d3ee);
+  border-radius: 6px;
+}
+
+/* ---- Cartes (wrap contenu) ---- */
+.container .table-responsive,
+.container form {
+  background:#fff;
+  border-radius:14px;
+  padding:20px;
+  box-shadow: 0 10px 24px rgba(22,34,79,.06);
+  border:1px solid rgba(20,41,93,.06);
+}
+
+/* ---- Table ---- */
+.table { margin-bottom:0; }
+.table > thead > tr > th {
+  border-bottom:0;
+  color:#4b5563;
+  font-weight:700;
+  text-transform:uppercase;
+  font-size:12px;
+  letter-spacing:.6px;
+}
+.table > tbody > tr {
+  transition: background .2s ease, transform .12s ease;
+}
+.table > tbody > tr:hover {
+  background:#f3f6ff;
+}
+.table > tbody > tr > td {
+  vertical-align: middle !important;
+  border-top:1px solid #eef1f6;
+}
+
+/* ---- Badges / alertes ---- */
+.alert {
+  border-radius:10px;
+  border:0;
+  box-shadow:0 8px 18px rgba(16, 185, 129, .15);
+}
+
+/* ---- Boutons ---- */
+.btn { border-radius:10px; padding:8px 14px; font-weight:600; }
+.btn + .btn, .btn + form { margin-left:8px; }
+
+/* primaire */
+.btn-primary {
+  background: linear-gradient(90deg, #2563eb, #0ea5e9);
+  border:0;
+  box-shadow: 0 8px 18px rgba(37,99,235,.25);
+}
+.btn-primary:hover { filter:brightness(.96); }
+
+/* info = modifier */
+.btn-info {
+  background:#22c55e; border:0;
+  box-shadow:0 8px 18px rgba(34,197,94,.22);
+}
+.btn-info:hover { background:#16a34a; }
+
+/* danger = supprimer */
+.btn-danger {
+  background:#ef4444; border:0;
+  box-shadow:0 8px 18px rgba(239,68,68,.22);
+}
+.btn-danger:hover { background:#dc2626; }
+
+/* ---- Formulaire ---- */
+.form-group label {
+  font-weight:600; color:#334155; margin-bottom:6px;
+}
+.form-control {
+  height:40px;
+  border-radius:10px;
+  border:1px solid #e5e7eb;
+  box-shadow: none;
+  transition: all .15s ease;
+}
+.form-control:focus {
+  border-color:#60a5fa;
+  box-shadow: 0 0 0 4px rgba(96,165,250,.25);
+}
+.form-control::placeholder { color:#9aa6b2; }
+
+/* ---- Lien "Ajouter un nouvel employé" ---- */
+a.btn.btn-primary.btn-sm, .container h4 a {
+  display:inline-block;
+  margin-top:14px;
+  padding:10px 14px;
+  border-radius:10px;
+  font-weight:600;
+  text-decoration:none;
+}
+
+/* ---- Petits écrans ---- */
+@media (max-width: 768px) {
+  .container .table-responsive, .container form { padding:16px; }
+  .btn { padding:8px 12px; }
+  h2 { font-size:22px; }
+}
