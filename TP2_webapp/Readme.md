@@ -12,17 +12,6 @@ L’utilisateur passe par la WebApp (front) sur le port 9001.
 La WebApp appelle le microservice (API) sur le port 9000.  
 Le microservice accède à la base H2. :contentReference[oaicite:0]{index=0}
 
-
-┌─────────────────┐     HTTP/REST      ┌─────────────────────┐
-│   Microservice  │◄──────────────────►│      WebApp         │
-│   (port 9000)   │   RestTemplate     │    (port 9001)      │
-│   ┌───────────┐ │                    │   ┌──────────────┐  │
-│   │   H2 DB   │ │                    │   │  Thymeleaf   │  │
-│   └───────────┘ │                    │   │   Templates  │  │
-└─────────────────┘                    └─────────────────────┘
-
-
-
 ## Travail réalisé (résumé)
 - Microservice EmployeesMngt :
   - modèle Employee + repository + service + controller REST
@@ -50,6 +39,7 @@ Le microservice accède à la base H2. :contentReference[oaicite:0]{index=0}
 ![Test Postman](captures/test_postman.png)
 - Démarrage WebApp + port 9001
 ![Démarrage WebApp](captures/demarragewebapp.png)
+
 - Page liste des employés
 ![Liste employés](captures/liste_emp.png)
 - Formulaire d’ajout d’un employé
@@ -58,9 +48,6 @@ Le microservice accède à la base H2. :contentReference[oaicite:0]{index=0}
 ![Modification employé](captures/modif.png)
 - Suppression d’un employé
 ![Suppression employé](captures/suppression.png)
-
-### Test de l’API avec Postman
-
 
 ## Résultat obtenu
 La WebApp récupère les employés depuis le microservice via RestTemplate et les affiche avec Thymeleaf.
