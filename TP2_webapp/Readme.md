@@ -38,7 +38,7 @@ Le microservice accède à la base H2. :contentReference[oaicite:0]{index=0}
 ![Navigation](captures/test_nav.png)
 ![Test Postman](captures/test_postman.png)
 - Démarrage WebApp + port 9001
-![Démarrage WebApp](api_sb/captures/demarragewebapp.png)
+![Démarrage WebApp](captures/demarragewepapp.png)
 
 - Page liste des employés
 ![Liste employés](captures/liste_emp.png)
