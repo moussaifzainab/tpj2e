@@ -2,6 +2,7 @@
 
 **Étudiant(e)** : ZAINAB MOUSSAIF  
 **Module** : JEE   
+**Classe** : 5IIR_11
 **Année** : 2025–2026  
 
 ---
