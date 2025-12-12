@@ -40,12 +40,14 @@ Le dashboard Hystrix permet de visualiser :
 ## Captures d’écran
 
 - Résultat d’appel avec activation du Timeout  :   
-   
+![Timeout](captures/timeout.jpeg)
 - Accès au dashbord Hystrix/ Dans le stream du dashbord on entre : http://localhost:9000/actuator/hystrix.stream
-
+![Dashboard Hystrix](captures/Dashbord.jpeg
+- avant l'Appel au microservice
+   ![Avant appel](captures/avant_appel.jpeg)
 
 - Appel au microservice : http://localhost:9000/myMessage  
-
+![Après appel](captures/apres_appel.jpeg)
 ---
 
 ## Résultat obtenu
