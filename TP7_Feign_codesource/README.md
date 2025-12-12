@@ -40,17 +40,16 @@ Une fois tous les services lancés, l’application est accessible via le micros
 
 ## Captures d’écran
 
-
-## Captures d’écran
 - vérifier le bon fonctionnement :
-- 
 ![H2 Produits](captures/H2 Produits.png)
+
 ![H2 Commandes](captures/H2_commandes.jpeg)
 ![H2 Paiement](captures/h2_paiement.jpeg)
 
 - Interface de l’application client
   
 ![Accueil client](captures/Accueil client.png)
+
 ![Détails produit](captures/Détailsproduit.png)
 
 - Passage de commande  
