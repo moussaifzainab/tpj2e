@@ -12,6 +12,7 @@ L’utilisateur passe par la WebApp (front) sur le port 9001.
 La WebApp appelle le microservice (API) sur le port 9000.  
 Le microservice accède à la base H2. :contentReference[oaicite:0]{index=0}
 
+
 ┌─────────────────┐     HTTP/REST      ┌─────────────────────┐
 │   Microservice  │◄──────────────────►│      WebApp         │
 │   (port 9000)   │   RestTemplate     │    (port 9001)      │
@@ -19,6 +20,7 @@ Le microservice accède à la base H2. :contentReference[oaicite:0]{index=0}
 │   │   H2 DB   │ │                    │   │  Thymeleaf   │  │
 │   └───────────┘ │                    │   │   Templates  │  │
 └─────────────────┘                    └─────────────────────┘
+
 
 
 ## Travail réalisé (résumé)
@@ -40,13 +42,25 @@ Le microservice accède à la base H2. :contentReference[oaicite:0]{index=0}
 - Console H2 : `http://localhost:9000/h2-console`
 
 ## Captures d’écran
-(Ajouter ici les captures)
 - Console H2 (connexion + table employees)
+![Console H2](captures/H2_console.png)
+![Table employés](captures/table_emp.png)
 - Test /employees dans le navigateur ou Postman
+![Navigation](captures/test_nav.png)
+![Test Postman](captures/test_postman.png)
 - Démarrage WebApp + port 9001
+![Démarrage WebApp](captures/demarragewebapp.png)
 - Page liste des employés
-- Formulaire ajout / modification
+![Liste employés](captures/liste_emp.png)
+- Formulaire d’ajout d’un employé
+![Ajout employé](captures/formulaire_ajout.png)
+- Modification d’un employé
+![Modification employé](captures/modif.png)
 - Suppression d’un employé
+![Suppression employé](captures/suppression.png)
+
+### Test de l’API avec Postman
+
 
 ## Résultat obtenu
 La WebApp récupère les employés depuis le microservice via RestTemplate et les affiche avec Thymeleaf.
