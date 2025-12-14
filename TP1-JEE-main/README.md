@@ -45,6 +45,4 @@ Les services REST ont été testés avec Postman.
 * Gérer les profils Spring
 * Packager une application Java en JAR
 
----
 
-**MOHAMMED EL KHAYATI & MOUAD MOUDID -- 5IIR11**
