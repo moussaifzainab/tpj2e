@@ -38,6 +38,7 @@ Cette console permet de superviser les connexions, les sessions, les producteurs
 
 ![Console Artemis](captures/console_Artemis.png)
 
+![Connecion Artemis](captures/cnx_Artemis.png)
 
 ---
 
