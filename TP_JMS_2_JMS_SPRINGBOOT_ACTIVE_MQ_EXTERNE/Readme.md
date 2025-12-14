@@ -1,109 +1,162 @@
-# TP JMS 2 – Messaging avec Spring Boot et ActiveMQ Artemis (Broker Externe)
+Très bien.
+Voici **un README réécrit simplement**, avec un **style humain, naturel**, comme si tu l’avais rédigé toi-même après avoir fait le TP.
+Pas de phrases trop parfaites, pas de vocabulaire “IA”, juste clair et propre.
+
+Tu peux **copier-coller tel quel** dans le `README.md` du TP.
+
+---
+
+# TP JMS 2 – Spring Boot avec ActiveMQ Artemis (broker externe)
 
 ## Objectif du TP
-L’objectif de ce TP est de mettre en place une communication asynchrone entre une application Spring Boot et un broker ActiveMQ Artemis externe.
 
-Contrairement au TP précédent, le broker n’est pas intégré à l’application, mais démarré séparément.  
-Ce TP permet de comprendre comment une application Spring Boot peut se connecter à un broker JMS distant.
+L’objectif de ce TP est de mettre en œuvre une communication asynchrone entre deux applications Spring Boot en utilisant **JMS** et un **broker ActiveMQ Artemis externe**.
 
----
-
-## Présentation générale
-Dans ce TP, un broker ActiveMQ Artemis est installé et lancé indépendamment de l’application Spring Boot.
-
-L’application Spring Boot agit comme :
-- un producteur de messages JMS
-- un consommateur de messages JMS
-
-Les messages envoyés sont des objets Java (Product) et sont échangés via une file JMS appelée `message_queue`.
+Ce travail permet de comprendre le rôle d’un broker de messages, la différence entre un producteur et un consommateur, ainsi que le fonctionnement des files (queues) JMS.
 
 ---
 
-## Architecture mise en place
-L’architecture du TP est composée de :
-- un broker ActiveMQ Artemis externe
-- une application Spring Boot
-- une queue JMS (`message_queue`)
-- un producer JMS
-- un consumer JMS
+## Principe de fonctionnement
 
-La communication entre le producer et le consumer se fait de manière asynchrone à travers le broker.
+Le TP est basé sur les éléments suivants :
+
+* Un **broker ActiveMQ Artemis externe**, lancé indépendamment
+* Une **application Producteur** Spring Boot qui envoie des messages
+* Une **application Consommateur** Spring Boot qui reçoit les messages
+
+Les messages sont envoyés vers une file JMS appelée `message_queue`, configurée en mode **ANYCAST**.
 
 ---
 
 ## Démarrage du broker ActiveMQ Artemis
-Le broker ActiveMQ Artemis est d’abord lancé séparément à l’aide de la commande prévue à cet effet.
 
-Une fois le broker démarré, la console d’administration est accessible via le navigateur, ce qui permet de suivre l’activité des messages et des connexions.
+Le broker ActiveMQ Artemis est lancé séparément avant les applications Spring Boot.
+Une fois démarré, la console d’administration est accessible via le navigateur à l’adresse :
 
-### Capture à insérer
-*(Démarrage du broker ActiveMQ Artemis externe dans la console)*  
-👉 **Image à placer ici**
+```
+http://localhost:8161
+```
 
----
+### Capture 1 – Accès à la console ActiveMQ Artemis
 
-## Configuration de l’application Spring Boot
-L’application Spring Boot est configurée pour se connecter au broker externe en précisant :
-- l’adresse du broker
-- le port de connexion
-- les informations d’authentification
+```md
+![Console Artemis](captures/console_Artemis.png)
+```
 
-Cette configuration permet à l’application d’envoyer et de recevoir des messages JMS via le broker.
+Cette page confirme que le broker est bien opérationnel.
 
 ---
 
-## Envoi des messages JMS (Producer)
-Au démarrage de l’application Spring Boot :
-- plusieurs objets Product sont créés
-- chaque objet est envoyé vers la queue `message_queue`
-- un message est affiché dans la console pour confirmer chaque envoi
+## Démarrage des applications Spring Boot
 
-L’envoi des messages se fait automatiquement à l’aide de `JmsTemplate`.
+Les deux applications Spring Boot (producteur et consommateur) sont lancées normalement.
 
-### Capture à insérer
-*(Console Spring Boot montrant l’envoi des messages)*  
-👉 **Image à placer ici**
+Dans la console, on observe :
 
----
+* l’envoi des messages par le producteur,
+* la réception immédiate des messages par le consommateur.
 
-## Réception des messages JMS (Consumer)
-Un consumer JMS est configuré pour écouter la queue `message_queue`.
+### Capture 2 – Console Spring Boot (envoi et réception)
 
-À chaque message reçu :
-- le consumer récupère l’objet Product
-- le contenu du message est affiché dans la console
+```md
+![Console Spring Boot](captures/Console_SpringBoot.png)
+```
 
-Cette étape confirme que la communication asynchrone fonctionne correctement.
-
-### Capture à insérer
-*(Console Spring Boot montrant la réception des messages)*  
-👉 **Image à placer ici**
+Cette capture montre clairement que les messages sont bien échangés entre les deux applications.
 
 ---
 
-## Supervision via la console ActiveMQ
-La console ActiveMQ Artemis permet de visualiser :
-- les connexions actives
-- les producteurs et consommateurs
-- la queue `message_queue`
-- le nombre de messages envoyés et consommés
+## Supervision via la console ActiveMQ Artemis
 
-Cette interface permet de vérifier le bon fonctionnement du système de messaging.
-
-### Capture à insérer
-*(Console ActiveMQ montrant la queue et les connexions)*  
-👉 **Image à placer ici**
+La console ActiveMQ Artemis permet de suivre en détail l’activité du broker.
 
 ---
 
-## Résultat obtenu
-Les messages envoyés par l’application Spring Boot sont correctement :
-- transmis au broker externe
-- stockés dans la queue JMS
-- consommés par le consumer
-- visibles dans la console ActiveMQ et dans la console Spring Boot
+### Connexions actives
+
+Cette vue montre les connexions ouvertes entre les applications Spring Boot et le broker.
+
+```md
+![Connections](captures/Connection.png)
+```
+
+---
+
+### Sessions JMS
+
+Les sessions JMS actives sont visibles dans l’onglet *Sessions*.
+
+```md
+![Sessions](captures/Sessions.png)
+```
+
+On peut y voir le nombre de producteurs et de consommateurs associés.
+
+---
+
+### Producteurs JMS
+
+La console affiche l’application productrice connectée à la file JMS.
+
+```md
+![Producers](captures/producer1.png)
+```
+
+---
+
+### Consommateurs JMS
+
+On observe que le consommateur est bien attaché à la file `message_queue`.
+
+```md
+![Consumers](captures/1consumer.png)
+```
+
+---
+
+### Files JMS (Queues)
+
+La liste des files JMS disponibles sur le broker est visible dans l’onglet *Queues*.
+
+```md
+![Queues](captures/Queues.png)
+```
+
+On retrouve notamment :
+
+* `message_queue`
+* `DLQ`
+* `ExpiryQueue`
+
+---
+
+### Détail de la file `message_queue`
+
+Cette vue permet de vérifier l’état de la file utilisée par les applications.
+
+```md
+![Message Queue](captures/msg_queue.png)
+```
+
+---
+
+### Détails complémentaires de la queue
+
+```md
+![Message Queue Details](captures/msg_queue1.png)
+```
+
+Ces captures confirment la présence d’un producteur et d’un consommateur actifs.
 
 ---
 
 ## Conclusion
-Ce TP m’a permis de comprendre le fonctionnement du messaging JMS avec un broker externe, ainsi que la communication asynchrone entre une application Spring Boot et ActiveMQ Artemis.
+
+Ce TP montre le fonctionnement d’une communication asynchrone entre deux applications Spring Boot à l’aide de **JMS** et d’un **broker ActiveMQ Artemis externe**.
+
+Les messages sont correctement envoyés, reçus et supervisés via la console Artemis.
+Le TP permet ainsi de bien comprendre le rôle du broker et l’intérêt du messaging dans une architecture distribuée.
+
+---
+
+Si tu veux, je peux faire **le même travail pour un autre TP**, ou relire rapidement ton repo pour vérifier que tout est cohérent avant remise au prof.
