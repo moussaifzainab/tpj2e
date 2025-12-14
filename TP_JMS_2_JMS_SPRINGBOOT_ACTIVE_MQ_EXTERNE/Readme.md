@@ -1,4 +1,4 @@
-```md
+
 # TP JMS 2 – Spring Boot & ActiveMQ Artemis (Broker externe)
 
 ## Objectif du TP
@@ -35,9 +35,9 @@ Une fois le broker démarré, la console d’administration est accessible via l
 Cette console permet de superviser les connexions, les sessions, les producteurs, les consommateurs et les files JMS.
 
 ### Console ActiveMQ Artemis
-```md
+
 ![Console Artemis](captures/console_Artemis.png)
-````
+
 
 ---
 
