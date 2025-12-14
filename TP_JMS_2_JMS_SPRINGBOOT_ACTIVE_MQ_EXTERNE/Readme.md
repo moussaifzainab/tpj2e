@@ -45,9 +45,8 @@ Cette console permet de superviser les connexions, les sessions, les producteurs
 
 L’onglet **Connections** permet de vérifier que les applications Spring Boot sont bien connectées au broker ActiveMQ Artemis.
 
-```md
 ![Connections](captures/Connection.png)
-```
+
 
 ---
 
@@ -55,9 +54,9 @@ L’onglet **Connections** permet de vérifier que les applications Spring Boot 
 
 Dans l’onglet **Sessions**, on peut observer les différentes sessions JMS ouvertes, ainsi que le nombre de producteurs et de consommateurs associés.
 
-```md
+
 ![Sessions](captures/Sessions.png)
-```
+
 
 ---
 
@@ -66,9 +65,9 @@ Dans l’onglet **Sessions**, on peut observer les différentes sessions JMS ouv
 La console affiche l’application productrice connectée à la file JMS `message_queue`.
 Cela confirme que l’envoi des messages est bien pris en charge par le broker.
 
-```md
+
 ![Producers](captures/producer1.png)
-```
+
 
 ---
 
@@ -76,9 +75,9 @@ Cela confirme que l’envoi des messages est bien pris en charge par le broker.
 
 On observe que le consommateur est correctement attaché à la file `message_queue` et qu’il est en écoute permanente.
 
-```md
+
 ![Consumers](captures/1consumer.png)
-```
+
 
 ---
 
@@ -92,9 +91,9 @@ On y retrouve notamment :
 * `DLQ`
 * `ExpiryQueue`
 
-```md
+
 ![Queues](captures/Queues.png)
-```
+
 
 ---
 
@@ -102,13 +101,11 @@ On y retrouve notamment :
 
 Cette vue permet de vérifier l’état de la file utilisée par les applications, ainsi que le nombre de messages, producteurs et consommateurs.
 
-```md
 ![Message Queue](captures/msg_queue.png)
-```
 
-```md
+
 ![Message Queue Details](captures/msg_queue1.png)
-```
+
 
 ---
 
@@ -121,9 +118,9 @@ La console Spring Boot montre clairement :
 
 Cela confirme le bon fonctionnement de la communication asynchrone via JMS.
 
-```md
+
 ![Console Spring Boot](captures/Console_SpringBoot.png)
-```
+
 
 ---
 
