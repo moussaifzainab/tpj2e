@@ -64,7 +64,7 @@ Cette capture montre l’accès au microservice Produits **à travers le Gateway
 
 > URL utilisée : `http://localhost:9101/microservice-produits/Produits`
 
-![Configuration via Gateway](images/gateway-config-produits.png)
+![Configuration via Gateway](images/gateway-config-produits.jpeg)
 
 ---
 
@@ -73,7 +73,7 @@ Cette capture montre l’appel direct au microservice Produits sur son port inte
 
 > URL utilisée : `http://localhost:9001/Produits`
 
-![Accès direct microservice Produits](images/microservice-produits-direct.png)
+![Accès direct microservice Produits](images/microservice-produits-direct.jpeg)
 
 ---
 
@@ -82,7 +82,7 @@ Cette capture montre l’accès aux données Produits **uniquement via le Gatewa
 
 > URL utilisée : `http://localhost:9103/microservice-produits/Produits`
 
-![Accès Produits via Gateway](images/gateway-produits.png)
+![Accès Produits via Gateway](images/gateway-produits.jpeg)
 
 ---
 
